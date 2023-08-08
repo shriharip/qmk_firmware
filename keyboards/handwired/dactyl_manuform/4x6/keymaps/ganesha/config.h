@@ -1,4 +1,6 @@
 /*
+This is the c configuration file for the keymap
+
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
 
@@ -18,22 +20,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include "config_common.h"
+/* Use I2C or Serial, not both */
+#define USE_SERIAL
+//#define USE_I2C
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID    0x444D
-#define MANUFACTURER tshort
+/* Select hand configuration */
+//#define MASTER_LEFT
+//#define MASTER_RIGHT
 
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
-/* serial.c configuration for split keyboard */
-#define SOFT_SERIAL_PIN D0
-
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
-
-/* Enables This makes it easier for fast typists to use dual-function keys */
-#define PERMISSIVE_HOLD
+#define EE_HANDS
+#define AUTO_SHIFT_TIMEOUT 300
+#define AUTO_SHIFT_REPEAT
+#define LEADER_TIMEOUT 300
+#define LEADER_PER_KEY_TIMING
+// #define ONESHOT_TIMEOUT 500
+#define MK_KINETIC_SPEED
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL 8	
+#undef MOUSEKEY_MOVE_DELTA
+#define MOUSEKEY_MOVE_DELTA 8
